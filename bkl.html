@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Brownian Kernel Ladders</title>
+
+  <style>
+    body {
+      max-width: 850px;
+      margin: 40px auto;
+      padding: 0 20px;
+      font-family: Georgia, "Times New Roman", serif;
+      line-height: 1.6;
+      color: #222;
+    }
+
+    h1 {
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      margin-top: 35px;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 5px;
+    }
+
+    .highlight {
+      background: #f8f8f8;
+      padding: 12px;
+      border-left: 3px solid #ccc;
+      margin: 15px 0;
+    }
+
+    a {
+      color: #0645ad;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+
+<body>
+
+<h1>Brownian Kernel Ladders (BKL)</h1>
+
+<p>
+<a href="index.html">← Back to homepage</a>
+</p>
+
+<h2>Overview</h2>
+
+<p>
+Modern deep learning theory is largely built around parameter-based analyses, 
+where model complexity grows with depth and width. This creates a fundamental tension: 
+deep models are highly expressive, yet often generalize well in practice.
+</p>
+
+<p>
+Brownian Kernel Ladders (BKL) is a function-space framework designed to address this gap. 
+Instead of analyzing neural networks through parameters, the framework constructs 
+a hierarchy of function spaces and studies deep models directly at the level of functions.
+</p>
+
+---
+
+<h2>Core Construction</h2>
+
+<p>
+BKL builds a sequence of function spaces recursively. At each level, a new space is obtained 
+by integrating Brownian kernels over the unit sphere of the previous layer. 
+This produces a hierarchical ladder of spaces that encode compositional structure.
+</p>
+
+<p>
+The construction induces an intrinsic notion of complexity, independent of parameterization, 
+which allows the analysis of deep models without reference to specific architectures.
+</p>
+
+---
+
+<h2>Main Result</h2>
+
+<div class="highlight">
+
+<p>
+For the BKL function class, the Gaussian complexity satisfies:
+</p>
+
+<p style="text-align:center;">
+O(n<sup>-1/2</sup>)
+</p>
+
+<p>
+independently of both the depth and the ambient dimension (up to logarithmic factors).
+</p>
+
+</div>
+
+<p>
+This result shows that increasing depth does not necessarily increase statistical complexity. 
+In particular, it provides a setting in which deep models remain both expressive and statistically stable.
+</p>
+
+---
+
+<h2>Interpretation</h2>
+
+<p>
+The key insight is that depth acts as a form of geometric regularization. 
+Each layer transforms the function space in a way that refines regularity 
+while preserving control over complexity.
+</p>
+
+<p>
+This leads to a perspective in which depth is not a source of overfitting, 
+but rather a mechanism for structured representation.
+</p>
+
+---
+
+<h2>Relation to Standard Deep Learning Theory</h2>
+
+<p>
+Traditional bounds based on parameter norms or network size typically grow with depth, 
+suggesting that deeper models should be harder to control statistically.
+</p>
+
+<p>
+In contrast, the BKL framework shows that when models are analyzed at the level of function spaces, 
+depth can be decoupled from statistical complexity.
+</p>
+
+<p>
+This provides an alternative theoretical explanation for the empirical success of deep architectures.
+</p>
+
+---
+
+<h2>Current Status</h2>
+
+<p>
+A full manuscript is currently in preparation. Ongoing work includes extensions to approximation theory 
+and the study of optimization and implicit bias within the BKL framework.
+</p>
+
+---
+
+<h2>Discussion</h2>
+
+<p>
+I am particularly interested in connections between hierarchical kernel constructions 
+and modern optimization phenomena, including implicit regularization in deep learning.
+</p>
+
+<p>
+If you are interested in related questions or potential collaborations, feel free to reach out.
+</p>
+
+</body>
+</html>
