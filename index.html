@@ -2,17 +2,12 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  >
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <meta
     name="description"
-    content="Mahdi Mohammadigohari — researcher in mathematical machine learning, statistical learning theory, kernel methods, functional analysis, and optimization."
+    content="Mahdi Mohammadigohari — researcher in mathematical machine learning, hierarchical function spaces, kernel methods, statistical learning theory, and optimization."
   >
-
   <meta name="author" content="Mahdi Mohammadigohari">
 
   <meta property="og:title" content="Mahdi Mohammadigohari">
@@ -20,24 +15,14 @@
     property="og:description"
     content="Researcher in mathematical machine learning working on hierarchical function spaces, Brownian Kernel Ladders, learning theory, and optimization."
   >
-  <meta
-    property="og:image"
-    content="https://mmg1980cs.github.io/myphoto.jpg"
-  >
-  <meta
-    property="og:url"
-    content="https://mmg1980cs.github.io/"
-  >
+  <meta property="og:image" content="https://mmg1980cs.github.io/myphoto.jpg">
+  <meta property="og:url" content="https://mmg1980cs.github.io/">
   <meta property="og:type" content="website">
 
   <title>Mahdi Mohammadigohari</title>
 
   <!-- Google Analytics -->
-  <script
-    async
-    src="https://www.googletagmanager.com/gtag/js?id=G-FGTDMCL7GJ">
-  </script>
-
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-FGTDMCL7GJ"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
 
@@ -52,8 +37,8 @@
   <style>
     :root {
       --text: #171717;
-      --link: #0645ad;
       --muted: #555;
+      --link: #0645ad;
       --page-width: 940px;
     }
 
@@ -69,10 +54,7 @@
       margin: 0;
       background: #fff;
       color: var(--text);
-      font-family:
-        Arial,
-        Helvetica,
-        sans-serif;
+      font-family: Arial, Helvetica, sans-serif;
       font-size: 16.5px;
       line-height: 1.56;
     }
@@ -84,10 +66,6 @@
       padding: 38px 28px 70px;
     }
 
-    /*
-      Top profile area:
-      information on the left and photograph on the right.
-    */
     .profile {
       display: grid;
       grid-template-columns: minmax(0, 1fr) 225px;
@@ -115,12 +93,9 @@
       margin: 0 0 17px;
     }
 
-    .status {
-      color: var(--muted);
-    }
-
     .location {
       margin: 0;
+      color: var(--muted);
     }
 
     .photo {
@@ -187,11 +162,6 @@
       margin: 3px 0;
     }
 
-    /*
-      Responsive layout:
-      on smaller screens, the identity block and photograph
-      form a single column.
-    */
     @media (max-width: 720px) {
       .page {
         padding: 27px 20px 50px;
@@ -234,13 +204,9 @@
 </head>
 
 <body>
-
   <div class="page">
-
     <header class="profile">
-
       <div class="identity">
-
         <h1>Mahdi Mohammadigohari</h1>
 
         <p class="email">
@@ -251,19 +217,12 @@
 
         <p class="position">
           <strong>Researcher in Mathematical Machine Learning</strong><br>
-
-          Ph.D. in Computer Science
-          <span class="status">
-            (doctoral research and thesis completed; formal conferral pending)
-          </span><br>
-
-          Free University of Bozen–Bolzano, Italy
+          Ph.D. in Computer Science<br>
+          Free University of Bozen–Bolzano, Italy<br><br>
+          Ph.D. in Mathematics (Functional Analysis)
         </p>
 
-        <p class="location">
-          Bolzano, Italy
-        </p>
-
+        <p class="location">Bolzano, Italy</p>
       </div>
 
       <img
@@ -271,137 +230,75 @@
         alt="Portrait of Mahdi Mohammadigohari"
         class="photo"
       >
-
     </header>
 
     <main>
-
       <section aria-labelledby="about-heading">
-
         <h2 id="about-heading">About</h2>
 
         <p>
-          I am a researcher in mathematical machine learning. I have completed
-          my doctoral research and submitted my Ph.D. thesis in Computer
-          Science at the Free University of Bozen–Bolzano, Italy; the remaining
-          final examination and degree conferral are formal completion steps.
-          My research develops function-space foundations for hierarchical and
-          compositional learning, with particular emphasis on functional
-          analysis, kernel methods, approximation theory, statistical learning
-          theory, and optimization.
+          I am a researcher in mathematical machine learning. My research
+          develops function-space foundations for hierarchical and
+          compositional learning, using tools from functional analysis, kernel
+          methods, approximation theory, statistical learning theory, and
+          optimization.
         </p>
 
         <p>
-          Before beginning my doctoral research in Computer Science, I
-          completed a Ph.D. in Mathematics, specializing in Functional
-          Analysis, at Islamic Azad University of Mashhad in 2018.
+          I completed my doctoral work in Computer Science at the Free
+          University of Bozen–Bolzano, Italy. Before this, I completed a Ph.D.
+          in Mathematics, specializing in Functional Analysis, at Islamic Azad
+          University of Mashhad in 2018.
         </p>
 
         <p>
-          My recent work develops
-          <a href="bkl.html">
-            <strong>Brownian Kernel Ladders (BKL)</strong>
-          </a>,
-          a recursive function-space framework based on Brownian kernels and
-          hierarchical representations. This work has evolved into a broader
-          research programme concerning variation spaces, recursive
-          reproducing kernel Hilbert spaces, finite-dimensional approximation,
-          statistical complexity, and optimization of hierarchical learning
-          models.
+          A central part of my research is
+          <a href="bkl.html"><strong>Brownian Kernel Ladders (BKL)</strong></a>,
+          a recursive hierarchy of integral reproducing kernel Hilbert spaces
+          generated by Brownian pullback kernels. The framework separates two
+          complementary levels: a full adaptive canonical envelope for
+          representational geometry and variational analysis, and realized or
+          finite controlled families for statistically accountable estimation.
         </p>
 
-        <p>
-          My current research focuses on the following areas:
-        </p>
+        <p>My research focuses on the following areas:</p>
 
         <ul class="research-areas">
-
           <li>
             <strong>
               Mathematical foundations of hierarchical and compositional
               learning
             </strong>
-
             <ul>
-              <li>
-                function-space perspectives on depth and hierarchical
-                representation
-              </li>
-
-              <li>
-                approximation properties of recursive learning models
-              </li>
-
-              <li>
-                statistical complexity and generalization in high-dimensional
-                settings
-              </li>
-
-              <li>
-                interactions among architecture, function space, and
-                representation complexity
-              </li>
+              <li>function-space perspectives on depth and hierarchical representation</li>
+              <li>approximation properties of recursive learning models</li>
+              <li>statistical complexity and generalization in high-dimensional settings</li>
+              <li>interactions among architecture, function space, and representation complexity</li>
             </ul>
           </li>
 
           <li>
-            <strong>
-              Brownian kernels, variation spaces, and optimization
-            </strong>
-
+            <strong>Brownian kernels, adaptive function spaces, and optimization</strong>
             <ul>
-              <li>
-                Brownian Kernel Ladders and recursive Brownian RKHS
-                constructions
-              </li>
-
-              <li>
-                Variation Brownian Kernel Ladders
-              </li>
-
-              <li>
-                measure-valued and finite-atomic representations
-              </li>
-
-              <li>
-                finite-dimensional Brownian RKHS approximation
-              </li>
-
-              <li>
-                optimization geometry and nonsmooth optimization
-              </li>
+              <li>Brownian Kernel Ladders and recursive Brownian integral RKHSs</li>
+              <li>adaptive canonical envelopes and infimal function-space complexity</li>
+              <li>regularity, nestedness, and strict growth with depth</li>
+              <li>realized ladders and controlled representation dictionaries</li>
+              <li>Gaussian complexity, oracle inequalities, and excess-risk bounds</li>
+              <li>finite-dimensional approximation and nonsmooth optimization</li>
             </ul>
           </li>
 
           <li>
-            <strong>
-              Theory-guided representation learning for Earth Observation
-            </strong>
-
+            <strong>Theory-guided representation learning for Earth Observation</strong>
             <ul>
-              <li>
-                hyperspectral representation learning
-              </li>
-
-              <li>
-                high-dimensional spectral and spatial structure
-              </li>
-
-              <li>
-                multimodal and multiscale Earth Observation data
-              </li>
-
-              <li>
-                mathematically principled learning under limited annotations
-              </li>
-
-              <li>
-                connections between learning theory and practical
-                remote-sensing models
-              </li>
+              <li>hyperspectral representation learning</li>
+              <li>high-dimensional spectral and spatial structure</li>
+              <li>multimodal and multiscale Earth Observation data</li>
+              <li>mathematically principled learning under limited annotations</li>
+              <li>connections between learning theory and practical remote-sensing models</li>
             </ul>
           </li>
-
         </ul>
 
         <p>
@@ -412,77 +309,46 @@
           </strong>
           Rather than viewing depth only as a property of a parameterized
           architecture, I study how recursive constructions influence
-          approximation, statistical complexity, representation, and
-          optimization.
+          approximation, regularity, statistical complexity, representation,
+          and optimization.
         </p>
 
         <p>
-          My long-term goal is to develop a unified mathematical theory of
+          My broader goal is to develop a unified mathematical theory of
           hierarchical representation learning that is rigorous enough to
           explain model behavior and flexible enough to guide practical
-          learning systems. I am particularly interested in developing these
-          ideas in Earth Observation, where high-dimensional data, multiscale
-          structure, heterogeneous sensing modalities, and limited annotations
-          provide a natural setting for mathematically principled machine
-          learning.
+          learning systems. High-dimensional, multiscale, and heterogeneous
+          Earth Observation data provide a natural setting in which to develop
+          and test these ideas.
         </p>
 
-        <p>
-          <strong>
-            I am currently open to postdoctoral and research opportunities in
-            mathematical machine learning, learning theory, kernel methods,
-            representation learning, optimization, and theory-guided Earth
-            Observation.
-          </strong>
-        </p>
-
-        <p>
-          For more detailed information about my research, please see my:
-        </p>
+        <p>For more detailed information, please see my:</p>
 
         <ul class="resources">
-
           <li>
-            <a href="Mahdi_Mohammadigohari_CV.pdf">
-              CV
-            </a>
+            <a href="Mahdi_Mohammadigohari_CV.pdf">CV</a>
             (PDF)
           </li>
-
           <li>
-            <a href="bkl.html">
-              Brownian Kernel Ladders project page
-            </a>
+            <a href="bkl.html">Brownian Kernel Ladders project page</a>
           </li>
-
           <li>
-            <a
-              href="https://scholar.google.com/citations?user=aPX-uGIAAAAJ&amp;hl=en">
+            <a href="https://scholar.google.com/citations?user=aPX-uGIAAAAJ&amp;hl=en">
               Publications and preprints
             </a>
             (Google Scholar)
           </li>
-
           <li>
-            <a
-              href="https://arxiv.org/search/?query=Mahdi+Mohammadigohari&amp;searchtype=author">
+            <a href="https://arxiv.org/search/?query=Mahdi+Mohammadigohari&amp;searchtype=author">
               arXiv papers
             </a>
           </li>
-
           <li>
-            <a href="https://github.com/mmg1980CS">
-              GitHub profile
-            </a>
+            <a href="https://github.com/mmg1980CS">GitHub profile</a>
           </li>
-
         </ul>
-
       </section>
-
     </main>
-
   </div>
-
 </body>
 </html>
