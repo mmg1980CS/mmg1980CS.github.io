@@ -368,33 +368,26 @@
           </li>
 
           <li>
-            <strong>Optimization geometry and finite realizations</strong>
+            <strong>Representation and optimization</strong>
             <p>
-              I use finite Brownian RKHSs to separate intrinsic function-space
-              structure from coordinate-dependent optimization. Equivalent
-              nodal, increment, and spectral realizations preserve the represented
-              functions, Brownian norm, and approximation space, while inducing
-              precise optimizer correspondences: orthogonal changes preserve
-              mapped gradient trajectories, increment coordinates implement
-              Brownian-metric preconditioning, and coordinatewise adaptive
-              methods can remain basis dependent. This work combines finite
-              elements, kernel interpolation, explicit spectral transforms,
-              conditioning analysis, and theorem-aligned numerical verification.
+              I study how finite descriptions of the same function space
+              interact with optimization. The aim is to distinguish intrinsic
+              properties of the represented model from effects introduced by
+              coordinates, numerical realization, and the choice of
+              optimization procedure. This work combines mathematical analysis
+              with controlled computational studies.
             </p>
           </li>
 
           <li>
-            <strong>Operator and end-to-end geometry for multitask learning</strong>
+            <strong>Function-space methods for multitask learning</strong>
             <p>
-              I develop Koopman and composition-operator analyses for deep
-              multi-output models in vector-valued Sobolev and Brownian RKHSs,
-              together with finite-rank shared-operator learning and transfer
-              guarantees. A related end-to-end viewpoint measures the actual
-              collection of task predictors by a sample-size-weighted trace norm.
-              This geometry has an exact empirical-complexity characterization,
-              accounts for alignment and cancellation, and can also be obtained
-              through task-covariance elimination and optimal intermediate-space
-              refactorization.
+              I study mathematical approaches to multi-output and multitask
+              learning in which shared representations and task relations are
+              analyzed at the level of functions and operators. The broader goal
+              is to obtain principled descriptions of representation, task
+              structure, and generalization that are less dependent on a
+              particular parameterization.
             </p>
           </li>
         </ol>
@@ -404,13 +397,11 @@
         <h2 id="principle-heading">Guiding principle</h2>
 
         <p>
-          Across these projects, I attach complexity to represented functions,
-          empirical covariance bodies, or end-to-end operators rather than to a
-          single parameterization. I also keep the relevant quantifiers
-          explicit: a fixed representation, an independently selected family,
-          same-sample representation selection, and unrestricted adaptive
-          optimization are different mathematical regimes and need not share
-          the same guarantees.
+          Across these projects, I seek descriptions tied to represented
+          functions and their geometry rather than to one arbitrary
+          parameterization. I distinguish carefully between structural,
+          statistical, and computational conclusions and state each result
+          within the regime for which it is justified.
         </p>
       </section>
 
@@ -422,9 +413,9 @@
             <strong>Theory</strong>
             <p>
               Functional analysis and operator theory; RKHSs and variation
-              spaces; Rademacher and Gaussian complexity; convex and nonsmooth
-              analysis; approximation theory; gradient flows and mean-field
-              limits; trace ideals and semidefinite geometry.
+              spaces; statistical learning theory, capacity, and generalization;
+              convex analysis and optimization; approximation theory;
+              variational methods; matrix and operator geometry.
             </p>
           </div>
 
