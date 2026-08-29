@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="description"
+    content="Common Covariance Geometry and Certification for Brownian Kernel Ladders: minimum-trace covariance envelopes for unrestricted adaptive RKHS unions, with Gaussian geometry, simultaneous approximation, and certified computation."
+  >
+  <meta name="author" content="Mahdi Mohammadigohari">
+
+  <meta property="og:title" content="Common Covariance Geometry and Certification for Brownian Kernel Ladders">
+  <meta
+    property="og:description"
+    content="One finite-dimensional covariance object linking unrestricted BKL adaptation, Gaussian geometry, common approximation spaces, and certifiable computation."
+  >
+  <meta property="og:url" content="https://mmg1980cs.github.io/cove-bkl.html">
+  <meta property="og:type" content="article">
+
+  <link rel="canonical" href="https://mmg1980cs.github.io/cove-bkl.html">
+
+  <title>Common Covariance Geometry for Brownian Kernel Ladders</title>
+
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [["\\(", "\\)"]],
+        displayMath: [["\\[", "\\]"]]
+      },
+      options: {
+        skipHtmlTags: ["script", "noscript", "style", "textarea", "pre", "code"]
+      }
+    };
+  </script>
+  <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  <style>
+    :root {
+      --text: #171717;
+      --muted: #555;
+      --link: #0645ad;
+      --rule: #d9d9d9;
+      --soft: #f7f7f7;
+      --page-width: 900px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      background: #fff;
+    }
+
+    body {
+      margin: 0;
+      background: #fff;
+      color: var(--text);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16.5px;
+      line-height: 1.58;
+    }
+
+    .page {
+      width: 100%;
+      max-width: var(--page-width);
+      margin: 0 auto;
+      padding: 38px 28px 72px;
+    }
+
+    a {
+      color: var(--link);
+      text-decoration: none;
+    }
+
+    a:hover,
+    a:focus {
+      text-decoration: underline;
+    }
+
+    .back {
+      margin: 0 0 25px;
+      font-size: 0.96rem;
+    }
+
+    h1 {
+      margin: 0 0 9px;
+      font-size: 2.25rem;
+      font-weight: 600;
+      line-height: 1.15;
+      letter-spacing: -0.025em;
+    }
+
+    .subtitle {
+      max-width: 790px;
+      margin: 0 0 13px;
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+
+    .paper-links {
+      margin: 0;
+    }
+
+    main {
+      margin-top: 36px;
+    }
+
+    section {
+      margin-top: 34px;
+    }
+
+    section:first-child {
+      margin-top: 0;
+    }
+
+    h2 {
+      margin: 0 0 16px;
+      font-size: 1.34rem;
+      font-weight: 600;
+      line-height: 1.3;
+    }
+
+    h3 {
+      margin: 22px 0 8px;
+      font-size: 1.06rem;
+      font-weight: 600;
+    }
+
+    p {
+      margin: 0 0 16px;
+    }
+
+    ul,
+    ol {
+      margin: 7px 0 18px;
+      padding-left: 25px;
+    }
+
+    li {
+      margin: 6px 0;
+    }
+
+    .definition {
+      margin: 20px 0;
+      padding: 15px 18px;
+      background: var(--soft);
+      border-left: 3px solid #a8a8a8;
+    }
+
+    .equation {
+      overflow-x: auto;
+      margin: 17px 0 19px;
+      padding: 3px 0;
+      text-align: center;
+    }
+
+    .three-role,
+    .two-level {
+      display: grid;
+      gap: 22px;
+      margin: 20px 0;
+    }
+
+    .three-role {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .two-level {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .level {
+      padding-top: 13px;
+      border-top: 2px solid var(--rule);
+    }
+
+    .level h3 {
+      margin-top: 0;
+    }
+
+    .scope-note {
+      margin: 21px 0;
+      padding: 14px 17px;
+      border: 1px solid var(--rule);
+    }
+
+    .result-list > li {
+      margin-bottom: 11px;
+    }
+
+    .evidence-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+      margin: 20px 0;
+    }
+
+    .evidence {
+      padding: 16px 18px;
+      background: var(--soft);
+    }
+
+    .evidence strong {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .citation {
+      overflow-x: auto;
+      margin: 12px 0 0;
+      padding: 15px 17px;
+      background: var(--soft);
+      font-family: Menlo, Consolas, "Liberation Mono", monospace;
+      font-size: 0.86rem;
+      line-height: 1.5;
+      white-space: pre;
+    }
+
+    footer {
+      margin-top: 42px;
+      padding-top: 16px;
+      border-top: 1px solid var(--rule);
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    @media (max-width: 760px) {
+      .page {
+        padding: 27px 20px 52px;
+      }
+
+      h1 {
+        font-size: 1.93rem;
+      }
+
+      .three-role,
+      .two-level,
+      .evidence-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+    }
+
+    @media (max-width: 420px) {
+      body {
+        font-size: 16px;
+      }
+
+      .page {
+        padding-right: 17px;
+        padding-left: 17px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="page">
+    <header>
+      <p class="back"><a href="index.html">← Mahdi Mohammadigohari</a></p>
+
+      <h1>Common Covariance Geometry and Certification for Brownian Kernel Ladders</h1>
+
+      <p class="subtitle">
+        A minimum-trace covariance envelope for the unrestricted empirical union
+        of Brownian Kernel Ladders, linking Gaussian geometry, common
+        approximation spaces, and rigorous finite-dimensional certification.
+      </p>
+
+      <p class="paper-links">
+        <a
+          href="https://doi.org/10.6084/m9.figshare.33386035"
+          target="_blank"
+          rel="noopener noreferrer"
+        >Figshare preprint and DOI</a>
+        ·
+        <a href="bkl.html">Foundational BKL project</a>
+        ·
+        <a href="vbkl.html">VBKL project</a>
+        ·
+        <a
+          href="https://scholar.google.com/citations?user=aPX-uGIAAAAJ&amp;hl=en"
+          target="_blank"
+          rel="noopener noreferrer"
+        >Google Scholar</a>
+      </p>
+    </header>
+
+    <main>
+      <section aria-labelledby="overview-heading">
+        <h2 id="overview-heading">Overview</h2>
+
+        <p>
+          A fixed RKHS produces one empirical Gram matrix and one ellipsoid of
+          attainable predictions on a sample. A representation-adaptive kernel
+          class is different: the kernel may be selected together with the
+          predictor, so the empirical class is a union of RKHS ellipsoids.
+          This project asks whether that complete union can be represented by
+          one positive-semidefinite covariance without erasing the geometry
+          needed for statistical analysis, simultaneous approximation, and
+          numerical certification.
+        </p>
+
+        <p>
+          Brownian Kernel Ladders provide a structured instance of this
+          unrestricted adaptive-union problem. Unlike the controlled-family
+          analysis in the foundational BKL work, the ladder representation is
+          allowed to vary inside the Gaussian supremum. The result is a
+          finite-sample theory centered on one minimum-trace common covariance.
+        </p>
+      </section>
+
+      <section aria-labelledby="object-heading">
+        <h2 id="object-heading">The central covariance object</h2>
+
+        <p>
+          For a sample \(x=(x_1,\ldots,x_n)\), let
+          \(\mathcal K_L(x)\subseteq\mathbb S_+^n\) be the closed family of
+          empirical depth-\(L\) BKL Gram matrices. The central value is
+        </p>
+
+        <div class="equation">
+          \[
+            \tau_L(x)
+            =
+            \min_{N\succeq 0}
+            \left\{
+              \operatorname{tr}N:
+              N\succeq K
+              \ \text{for every }K\in\mathcal K_L(x)
+            \right\}.
+          \]
+        </div>
+
+        <p>
+          An optimizer \(N_\star\) defines one ellipsoid containing the unit
+          trace ellipsoid of every admissible ladder. With
+          \(S_L(x)=\sum_i \rho_L(x_i)^2\), the normalized profile
+          \(\Lambda_L(x)=\sqrt{\tau_L(x)/S_L(x)}\) separates the scale of
+          the universal diagonal envelope from the extra cost of common
+          domination. The trace objective is adapted to Gaussian average
+          radius, but the full matrix carries more information than its trace.
+        </p>
+
+        <div class="three-role">
+          <div class="level">
+            <h3>Statistical scale</h3>
+            <p>
+              Its trace controls the Gaussian support of the complete adaptive
+              ball:
+              \(\widehat{\mathcal G}_x(\mathcal B_L(r))
+              \le r\sqrt{\tau_L(x)}/n\).
+            </p>
+          </div>
+
+          <div class="level">
+            <h3>Common feature space</h3>
+            <p>
+              Its leading eigenspaces give one sample-dependent subspace that
+              approximates every function in the unrestricted adaptive ball,
+              not only one kernel or one target.
+            </p>
+          </div>
+
+          <div class="level">
+            <h3>Certification</h3>
+            <p>
+              Its active constraints support finite contact certificates,
+              semidefinite lower bounds, verified separation upper bounds, and
+              conservative graph-based certificates.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section aria-labelledby="identities-heading">
+        <h2 id="identities-heading">Exact finite-sample identities</h2>
+
+        <ul class="result-list">
+          <li>
+            <strong>Empirical covariance body.</strong>
+            The closed trace body of the BKL unit ball is exactly the closure
+            of the union of the ellipsoids
+            \(E(K)=K^{1/2}B_2^n\), \(K\in\mathcal K_L(x)\).
+          </li>
+          <li>
+            <strong>Operator factorization.</strong>
+            If \(T_{L,x}\) is the adaptive evaluation operator, then
+            \[
+              \pi_2(T_{L,x})^2=\tau_L(x).
+            \]
+            Thus the common-covariance problem is exactly an absolutely
+            two-summing norm at finite resolution, not merely a generic upper
+            bound.
+          </li>
+          <li>
+            <strong>Robust multiplier geometry.</strong>
+            The same value is the exact supremum of the squared support
+            function over all centered multiplier laws whose covariance is
+            dominated by the identity.
+          </li>
+          <li>
+            <strong>Gaussian defect.</strong>
+            Replacing the worst covariance-dominated multiplier by a standard
+            Gaussian creates a measurable defect. Bounded defect means that the
+            covariance certificate is tight up to constants; it does not by
+            itself imply a fast learning rate.
+          </li>
+        </ul>
+      </section>
+
+      <section aria-labelledby="brownian-heading">
+        <h2 id="brownian-heading">Brownian reductions: Dirac, thresholds, and graphs</h2>
+
+        <p>
+          The BKL-specific step removes the final mixing measure. If
+          \(\mathcal S_{L-1}(x)\) is the closed family of previous-layer unit
+          traces and \(B(a)\) is the Brownian pullback matrix generated by
+          \(a\), then
+        </p>
+
+        <div class="equation">
+          \[
+            h_{L,x}(z)^2
+            =
+            \sup_{a\in\mathcal S_{L-1}(x)}
+            z^\top B(a)z,
+          \]
+          \[
+            N\succeq K\quad\forall K\in\mathcal K_L(x)
+            \quad\Longleftrightarrow\quad
+            N\succeq B(a)\quad\forall a\in\mathcal S_{L-1}(x).
+          \]
+        </div>
+
+        <p>
+          The signed Brownian layer-cake formula then writes each \(B(a)\) as
+          an integral of positive and negative threshold outer products:
+        </p>
+
+        <div class="equation">
+          \[
+            B(a)
+            =
+            \int_0^\infty
+            \left[
+              v_t^+(a)v_t^+(a)^\top
+              +
+              v_t^-(a)v_t^-(a)^\top
+            \right]\,\mathrm dt.
+          \]
+        </div>
+
+        <p>
+          This converts unrestricted kernel adaptation into the geometry of
+          signed threshold set systems. Recursive decomposition dictionaries
+          yield upper profiles, stable and integrated thresholds give reverse
+          information, and graph coarea supplies deterministic Loewner-order
+          majorants through effective resistance.
+        </p>
+      </section>
+
+      <section aria-labelledby="regimes-heading">
+        <h2 id="regimes-heading">A phase diagram for unrestricted adaptation</h2>
+
+        <ul class="result-list">
+          <li>
+            <strong>Fixed and finite families.</strong>
+            One fixed ladder has no common-domination inflation. Finite
+            controlled families and samples with only \(k\) distinct locations
+            admit explicit covariance envelopes.
+          </li>
+          <li>
+            <strong>Hierarchical and ordered traces.</strong>
+            A laminar threshold hierarchy with bounded decomposition width
+            gives a near-\(n^{-1/2}\) full-class rate up to a logarithmic
+            factor. Bounded empirical oscillation in one ordering gives an
+            \(O(\log n/\sqrt n)\) rate under the stated hypotheses.
+          </li>
+          <li>
+            <strong>Orthogonal and well-conditioned designs.</strong>
+            Orthogonal samples exhibit the worst-case depth law
+            \(\Lambda_L\asymp n^{1/2-2^{-L}}\) and complexity
+            \(n^{-2^{-L}}\). Well-conditioned and high-dimensional spherical
+            samples have a bounded Gaussian defect, while retaining this slow
+            sign-rich rate.
+          </li>
+          <li>
+            <strong>Random support and perturbation transfer.</strong>
+            Balanced repeated or categorical supports preserve the covariance
+            and Gaussian-richness geometry. Matched perturbation theorems
+            quantify when those conclusions survive noisy inputs.
+          </li>
+        </ul>
+
+        <div class="scope-note">
+          <strong>Tight certificate is not the same as fast rate.</strong>
+          The theory separates the tightness of the common covariance from the
+          actual size of the unrestricted adaptive class. This distinction is
+          visible on both orthogonal and spherical designs.
+        </div>
+      </section>
+
+      <section aria-labelledby="approximation-heading">
+        <h2 id="approximation-heading">One subspace for the complete adaptive ball</h2>
+
+        <p>
+          The common covariance provides an exact simultaneous-approximation
+          interpretation. For an \(m\)-dimensional subspace \(V\subseteq
+          \mathbb R^n\), the empirical Kolmogorov width satisfies
+        </p>
+
+        <div class="equation">
+          \[
+            d_{m,L}(x;r)^2
+            =
+            \frac{r^2}{n}
+            \inf_{\dim V\le m}
+            \sup_{K\in\mathcal K_L(x)}
+            \lambda_{\max}\!\left(P_{V^\perp}KP_{V^\perp}\right).
+          \]
+        </div>
+
+        <p>
+          If \(V_m^\star\) is spanned by the first \(m\) eigenvectors of an
+          optimal common covariance \(N_\star\), then
+        </p>
+
+        <div class="equation">
+          \[
+            d_{m,L}(x;r)
+            \le
+            \frac{r}{\sqrt n}
+            \sqrt{\lambda_{m+1}(N_\star)}
+            \le
+            r\sqrt{\frac{\tau_L(x)}{n(m+1)}}.
+          \]
+        </div>
+
+        <p>
+          The quantifier order is the key point: one subspace is chosen and
+          then works for every function in the full adaptive ball. Under a
+          balanced threshold hierarchy, the subspace can be chosen explicitly
+          from coarse discrete Haar modes, with no logarithmic tree-height
+          penalty in the approximation bound.
+        </p>
+      </section>
+
+      <section aria-labelledby="certification-heading">
+        <h2 id="certification-heading">Certifiable computation</h2>
+
+        <h3>Finite contact</h3>
+        <p>
+          Although the covariance program has infinitely many constraints, an
+          exact optimizer is determined by at most
+          \(n(n+1)/2+1\) Brownian contact matrices from the closed last-layer
+          Dirac trace family. This finite certificate is exact but existential.
+        </p>
+
+        <h3>Active semidefinite programs</h3>
+        <p>
+          A finite active family gives a certified lower bound. A rigorously
+          verified global separation value converts a floored active solution
+          into an upper bound. Local witness optimization may improve the lower
+          certificate, but it is not itself evidence of global domination.
+        </p>
+
+        <h3>Resistance design</h3>
+        <p>
+          For pairwise-distinct sample locations, a graph-coarea majorant
+          leads to a fully convex effective-resistance design problem. It
+          supplies a conservative global upper certificate,
+          explicit optimality conditions, a computable a posteriori gap, and a
+          sparse Frank–Wolfe implementation. On a fixed tree, the optimal
+          weights and certificate are available in closed form.
+        </p>
+      </section>
+
+      <section aria-labelledby="evidence-heading">
+        <h2 id="evidence-heading">Finite covariance-path illustration</h2>
+
+        <p>
+          The manuscript includes a finite depth-two Brownian path between the
+          identity and a training-only Fisher diagonal on frozen ImageNet
+          ResNet-18 representations. The path is selected by repeated
+          cross-validation using only the labelled training sample. Its role is
+          to illustrate the distinction between covariance certification and
+          predictive model selection.
+        </p>
+
+        <div class="evidence-grid">
+          <div class="evidence">
+            <strong>Covariance certificates: 45/45 succeed</strong>
+            Every selected fit passes the finite five-kernel path domination
+            check after the explicitly reported numerical repair. Forty-four of
+            the 45 selected covariance strengths are strictly positive.
+          </div>
+
+          <div class="evidence">
+            <strong>Predictive gate: not passed</strong>
+            On the locked suite, the macro-average difference from the strongest
+            tuned RBF/Laplace control is \(+0.163\) percentage points, but the
+            predeclared requirement was at least 8/15 paired wins or ties and
+            the observed count is 7/15.
+          </div>
+        </div>
+
+        <div class="scope-note">
+          The finite path certificate concerns only five path kernels on an
+          empirical anchor. It is not a certificate for the unrestricted
+          recursive BKL family, and the successful covariance checks are not a
+          claim of universal predictive superiority.
+        </div>
+      </section>
+
+      <section aria-labelledby="relation-heading">
+        <h2 id="relation-heading">Position in the Brownian ladder program</h2>
+
+        <div class="two-level">
+          <div class="level">
+            <h3>Relation to BKL</h3>
+            <p>
+              The <a href="bkl.html">foundational BKL project</a> develops the
+              recursive integral-RKHS hierarchy and separates the full adaptive
+              envelope from realized or finite controlled families. The present
+              project studies the complementary case in which the canonical
+              ladder may vary inside the empirical Gaussian supremum.
+            </p>
+          </div>
+
+          <div class="level">
+            <h3>Relation to VBKL</h3>
+            <p>
+              <a href="vbkl.html">VBKL</a> places signed-measure superposition
+              only at the outermost layer and produces a path-atomic variation
+              hull. The common-covariance results here concern the canonical
+              integral-RKHS BKL family and are not asserted to transfer
+              automatically to the full VBKL space.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section aria-labelledby="scope-heading">
+        <h2 id="scope-heading">Exact, conditional, and computational conclusions</h2>
+
+        <ul class="result-list">
+          <li>
+            <strong>Exact:</strong>
+            the empirical union-of-ellipsoids representation, the minimum-trace
+            common covariance, the two-summing identity, the robust multiplier
+            formulation, the empirical width formula, and finite contact.
+          </li>
+          <li>
+            <strong>Conditional:</strong>
+            Gaussian reverses and sharper rates under explicit threshold,
+            hierarchy, ordering, conditioning, occupancy, or perturbation
+            assumptions.
+          </li>
+          <li>
+            <strong>Computational:</strong>
+            active SDP lower certificates, verified-separation upper
+            certificates, resistance-design upper bounds, and the finite
+            covariance-path study.
+          </li>
+        </ul>
+
+        <p>
+          Open directions include population and out-of-sample common
+          covariances, intrinsic oscillation bounds beyond depth two, less
+          restrictive large-depth perturbation theory, localized profiles,
+          globally verified recursive separation, and reusable common
+          covariances across tasks.
+        </p>
+      </section>
+
+      <section aria-labelledby="manuscript-heading">
+        <h2 id="manuscript-heading">Manuscript and citation</h2>
+
+        <p>
+          <strong>Common Covariance Geometry and Certification for Brownian Kernel Ladders</strong><br>
+          Mahdi Mohammadigohari.<br>
+          Figshare preprint, 2026.<br>
+          <a
+            href="https://doi.org/10.6084/m9.figshare.33386035"
+            target="_blank"
+            rel="noopener noreferrer"
+          >doi:10.6084/m9.figshare.33386035</a>
+        </p>
+
+        <div class="citation">@misc{mohammadigohari2026commoncovariance,
+  title        = {Common Covariance Geometry and Certification for Brownian Kernel Ladders},
+  author       = {Mohammadigohari, Mahdi},
+  year         = {2026},
+  howpublished = {Figshare preprint},
+  doi          = {10.6084/m9.figshare.33386035},
+  url          = {https://doi.org/10.6084/m9.figshare.33386035}
+}</div>
+      </section>
+    </main>
+
+    <footer>
+      <a href="index.html">Mahdi Mohammadigohari</a>
+    </footer>
+  </div>
+</body>
+</html>
