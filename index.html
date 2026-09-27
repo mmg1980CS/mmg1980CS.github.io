@@ -2,514 +2,171 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <meta
-    name="description"
-    content="Mahdi Mohammadigohari — researcher in machine learning theory working on recursive RKHSs, variation spaces, adaptive representation, statistical complexity, optimization geometry, and multitask learning."
-  >
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Mahdi Mohammadigohari — independent researcher in machine learning theory and functional analysis. Research on Brownian kernel ladders, representation learning, statistical complexity, and optimization geometry.">
   <meta name="author" content="Mahdi Mohammadigohari">
-
-  <meta property="og:title" content="Mahdi Mohammadigohari">
-  <meta
-    property="og:description"
-    content="Researcher in machine learning theory working on recursive function spaces, adaptive representation, optimization geometry, and multitask learning."
-  >
+  <meta property="og:title" content="Mahdi Mohammadigohari | Machine Learning Theory">
+  <meta property="og:description" content="Mathematical foundations of machine learning. Research, publications, and background in kernel methods, representation learning, and optimization geometry.">
   <meta property="og:image" content="https://mmg1980cs.github.io/myphoto.jpg">
   <meta property="og:url" content="https://mmg1980cs.github.io/">
   <meta property="og:type" content="website">
-
+  <meta name="theme-color" content="#145c55">
   <link rel="canonical" href="https://mmg1980cs.github.io/">
-
-  <title>Mahdi Mohammadigohari</title>
-
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="stylesheet" href="assets/site.css">
+  <title>Mahdi Mohammadigohari | Machine Learning Theory</title>
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-FGTDMCL7GJ"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-
-    function gtag() {
-      window.dataLayer.push(arguments);
-    }
-
+    function gtag() { window.dataLayer.push(arguments); }
     gtag("js", new Date());
     gtag("config", "G-FGTDMCL7GJ");
   </script>
-
-  <style>
-    :root {
-      --text: #171717;
-      --muted: #555;
-      --link: #0645ad;
-      --rule: #dddddd;
-      --page-width: 960px;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    html {
-      background: #ffffff;
-    }
-
-    body {
-      margin: 0;
-      background: #ffffff;
-      color: var(--text);
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 16.5px;
-      line-height: 1.58;
-    }
-
-    .page {
-      width: 100%;
-      max-width: var(--page-width);
-      margin: 0 auto;
-      padding: 40px 30px 72px;
-    }
-
-    .profile {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) 220px;
-      gap: 50px;
-      align-items: start;
-    }
-
-    .identity {
-      min-width: 0;
-    }
-
-    h1 {
-      margin: 0 0 9px;
-      font-size: 2.18rem;
-      font-weight: 600;
-      line-height: 1.15;
-      letter-spacing: -0.025em;
-    }
-
-    .email,
-    .position,
-    .degrees,
-    .links {
-      margin: 0 0 15px;
-    }
-
-    .position {
-      margin-top: 20px;
-    }
-
-    .degrees {
-      color: var(--muted);
-    }
-
-    .links {
-      margin-bottom: 0;
-    }
-
-    .photo {
-      display: block;
-      width: 220px;
-      max-width: 100%;
-      height: auto;
-      justify-self: end;
-    }
-
-    main {
-      margin-top: 38px;
-    }
-
-    section {
-      margin-top: 36px;
-    }
-
-    section:first-child {
-      margin-top: 0;
-    }
-
-    h2 {
-      margin: 0 0 18px;
-      font-size: 1.34rem;
-      font-weight: 600;
-      line-height: 1.3;
-    }
-
-    p {
-      margin: 0 0 17px;
-    }
-
-    a {
-      color: var(--link);
-      text-decoration: none;
-    }
-
-    a:hover,
-    a:focus {
-      text-decoration: underline;
-    }
-
-    .research-program {
-      margin: 7px 0 0;
-      padding-left: 25px;
-    }
-
-    .research-program > li {
-      margin: 0 0 18px;
-      padding-left: 3px;
-    }
-
-    .research-program > li:last-child {
-      margin-bottom: 0;
-    }
-
-    .research-program p {
-      margin: 5px 0 0;
-    }
-
-    .public-work {
-      margin: 6px 0 0;
-      padding-left: 24px;
-    }
-
-    .public-work li {
-      margin: 6px 0;
-    }
-
-    .methods {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 28px;
-      margin-top: 7px;
-    }
-
-    .methods p {
-      margin: 5px 0 0;
-    }
-
-    .method-block {
-      padding-top: 13px;
-      border-top: 1px solid var(--rule);
-    }
-
-    footer {
-      margin-top: 42px;
-      padding-top: 16px;
-      border-top: 1px solid var(--rule);
-      color: var(--muted);
-      font-size: 0.92rem;
-    }
-
-    @media (max-width: 740px) {
-      .page {
-        padding: 28px 21px 52px;
-      }
-
-      .profile {
-        grid-template-columns: 1fr;
-        gap: 25px;
-      }
-
-      .photo {
-        width: 205px;
-        justify-self: start;
-      }
-
-      .methods {
-        grid-template-columns: 1fr;
-        gap: 17px;
-      }
-
-      h1 {
-        font-size: 1.9rem;
-      }
-
-      main {
-        margin-top: 31px;
-      }
-    }
-
-    @media (max-width: 420px) {
-      body {
-        font-size: 16px;
-      }
-
-      .page {
-        padding-right: 17px;
-        padding-left: 17px;
-      }
-
-      .photo {
-        width: 185px;
-      }
-    }
-  </style>
 </head>
-
 <body>
-  <div class="page">
-    <header class="profile">
-      <div class="identity">
-        <h1>Mahdi Mohammadigohari</h1>
-
-        <p class="email">
-          <a href="mailto:mahdi.mohammadigohari@gmail.com">
-            mahdi.mohammadigohari [at] gmail [dot] com
-          </a>
-        </p>
-
-        <p class="position">
-          <strong>Researcher in Machine Learning Theory</strong><br>
-          Bolzano, Italy
-        </p>
-
-        <p class="degrees">
-          Ph.D. in Computer Science — Machine Learning Theory<br>
-          Ph.D. in Mathematics — Functional Analysis
-        </p>
-
-        <p class="links">
-          <a
-            href="https://scholar.google.com/citations?user=aPX-uGIAAAAJ&amp;hl=en"
-            target="_blank"
-            rel="noopener noreferrer"
-          >Google Scholar</a>
-          ·
-          <a
-            href="https://arxiv.org/search/?query=Mahdi+Mohammadigohari&amp;searchtype=author"
-            target="_blank"
-            rel="noopener noreferrer"
-          >arXiv</a>
-          ·
-          <a
-            href="https://github.com/mmg1980CS"
-            target="_blank"
-            rel="noopener noreferrer"
-          >GitHub</a>
-          ·
-          <a
-            href="Mahdi_Mohammadigohari_CV.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-          >CV (PDF)</a>
-        </p>
+<a class="skip-link" href="#main">Skip to main content</a>
+<div class="wrap">
+  <header class="site-header">
+    <a class="wordmark" href="#top" aria-label="Mahdi Mohammadigohari, home"><span class="monogram" aria-hidden="true">M</span><span class="wordmark-name">Mahdi Mohammadigohari</span></a>
+    <nav class="site-nav" aria-label="Main navigation">
+      <a href="#research">Research</a>
+      <a href="#publications">Publications</a>
+      <a href="#background">Background</a>
+      <a class="nav-cv" href="Mahdi_Mohammadigohari_CV.pdf">CV <span aria-hidden="true">↗</span></a>
+    </nav>
+  </header>
+  <main id="main">
+    <section class="hero" id="top" aria-labelledby="name">
+      <div class="hero-copy">
+        <p class="eyebrow">Independent researcher · Bolzano, Italy</p>
+        <h1 id="name"><span>Mahdi</span><span>Mohammadigohari</span></h1>
+        <p class="hero-subtitle">Mathematical foundations<br>of machine learning.</p>
+        <p class="hero-description">I study how representations shape what deep models can learn — through the geometry of function spaces, statistical complexity, and optimization.</p>
+        <div class="hero-actions">
+          <a class="button" href="Mahdi_Mohammadigohari_CV.pdf">Curriculum vitae <span class="arrow" aria-hidden="true">↗</span></a>
+          <a class="text-link" href="mailto:mahdi.mohammadigohari@gmail.com">Get in touch <span class="arrow" aria-hidden="true">↗</span></a>
+        </div>
       </div>
-
-      <img
-        src="myphoto.jpg"
-        alt="Portrait of Mahdi Mohammadigohari"
-        class="photo"
-      >
-    </header>
-
-    <main>
-      <section aria-labelledby="about-heading">
-        <h2 id="about-heading">About</h2>
-
-        <p>
-          I develop mathematical foundations for representation learning and
-          deep models. My work studies how hierarchy, adaptive feature choice,
-          and reparameterization affect the geometry of represented function
-          classes, their statistical complexity, their approximation
-          properties, and the dynamics of optimization. I use reproducing
-          kernel Hilbert spaces and variation spaces together with functional
-          analysis, operator theory, empirical-process methods, approximation
-          theory, and convex and variational analysis.
-        </p>
-
-        <p>
-          I completed my doctoral work in Computer Science at the Free
-          University of Bozen–Bolzano, with a focus on machine learning theory.
-          Before this, I completed a Ph.D. in Mathematics, specializing in
-          Functional Analysis, at Islamic Azad University of Mashhad.
-        </p>
-
-        <p>
-          The organizing theme of my research is
-          <a href="bkl.html"><strong>Brownian Kernel Ladders (BKLs)</strong></a>:
-          recursive function spaces built from Brownian pullback kernels. The
-          framework separates a full adaptive envelope, used to study
-          representation, regularity, depth, and variational structure, from
-          realized or controlled families, used for statistically accountable
-          estimation. This distinction between representation and estimation
-          recurs throughout my work.
-        </p>
-
-        <p>
-          A subsequent project in this research program develops
-          <a href="cove-bkl.html"><strong>common covariance geometry for the
-          unrestricted empirical BKL union</strong></a>. It studies one
-          minimum-trace covariance whose trace controls Gaussian complexity,
-          whose spectrum gives a common approximation space, and whose active
-          constraints support rigorous numerical certification.
-        </p>
-      </section>
-
-      <section aria-labelledby="program-heading">
-        <h2 id="program-heading">Research program</h2>
-
-        <ol class="research-program">
-          <li>
-            <strong>Recursive RKHSs and variation spaces</strong>
-            <p>
-              I study hierarchical function spaces in which depth is encoded
-              directly through recursive Brownian geometry. The BKL framework
-              develops integral-RKHS hierarchies, adaptive infimal complexity,
-              regularity, nestedness, strict depth growth under explicit
-              geometric hypotheses, and controlled-family learning guarantees.
-              The complementary
-              <a href="vbkl.html"><strong>Variation Brownian Kernel Ladder</strong></a>
-              construction postpones signed-measure superposition until the
-              outermost layer, separating nonlinear recursion from linear
-              variation and supporting compactness, attainment,
-              architecture-dependent generalization, and constructive finite
-              approximation.
-            </p>
-          </li>
-
-          <li>
-            <strong>Adaptive representation and empirical covariance geometry</strong>
-            <p>
-              I investigate the statistical price of choosing a representation.
-              For Brownian heads on fixed deep features, the relevant scale is
-              the realized activation mass; when the representation is selected
-              on the same sample, coordinate or projected threshold traces
-              quantify an additional selection cost, including for rectangular
-              and rank-deficient ReLU extractors. For unrestricted adaptive BKL
-              unions, the
-              <a href="cove-bkl.html"><strong>common-covariance project</strong></a>
-              develops minimum-trace envelopes connecting Gaussian geometry,
-              operator factorization, simultaneous approximation, threshold
-              and graph structure, and semidefinite certification.
-            </p>
-          </li>
-
-          <li>
-            <strong>Representation and optimization</strong>
-            <p>
-              I study how finite descriptions of the same function space
-              interact with optimization. The aim is to distinguish intrinsic
-              properties of the represented model from effects introduced by
-              coordinates, numerical realization, and the choice of
-              optimization procedure. This work combines mathematical analysis
-              with controlled computational studies.
-            </p>
-          </li>
-
-          <li>
-            <strong>Function-space methods for multitask learning</strong>
-            <p>
-              I study mathematical approaches to multi-output and multitask
-              learning in which shared representations and task relations are
-              analyzed at the level of functions and operators. The broader goal
-              is to obtain principled descriptions of representation, task
-              structure, and generalization that are less dependent on a
-              particular parameterization.
-            </p>
-          </li>
+      <figure class="portrait">
+        <div class="portrait-frame"><img src="myphoto.jpg" width="400" height="400" alt="Portrait of Mahdi Mohammadigohari" fetchpriority="high"></div>
+        <figcaption><span>Machine learning theory</span><span>Functional analysis &amp; operator geometry</span></figcaption>
+      </figure>
+    </section>
+    <div class="profile-links" aria-label="Academic profiles">
+      <span class="links-label">Elsewhere</span>
+      <a href="https://scholar.google.com/citations?user=aPX-uGIAAAAJ&amp;hl=en">Google Scholar <span aria-hidden="true">↗</span></a>
+      <a href="https://arxiv.org/search/?query=Mahdi+Mohammadigohari&amp;searchtype=author">arXiv <span aria-hidden="true">↗</span></a>
+      <a href="https://orcid.org/0000-0002-4811-6585">ORCID <span aria-hidden="true">↗</span></a>
+      <a href="https://github.com/mmg1980CS">GitHub <span aria-hidden="true">↗</span></a>
+      <a href="https://www.linkedin.com/in/mahdi-mohammadigohari-659b0b254">LinkedIn <span aria-hidden="true">↗</span></a>
+    </div>
+    <section class="content-section" id="research" aria-labelledby="research-heading">
+      <p class="section-label"><span>01</span>Research</p>
+      <div class="section-content">
+        <h2 id="research-heading">Learning through function-space geometry.</h2>
+        <p class="section-intro">My research connects functional analysis with statistical learning theory. I use reproducing kernel Hilbert spaces (RKHSs), variation spaces, and operator methods to study representation, approximation, generalization, and the dynamics of optimization.</p>
+        <ol class="research-list">
+          <li class="research-item"><div>
+            <h3>Recursive RKHSs &amp; variation spaces</h3>
+            <p>Brownian Kernel Ladders encode depth through recursive Brownian geometry. I study their regularity, approximation properties, variational structure, and learning guarantees. Variation Brownian Kernel Ladders separate nonlinear recursion from outermost signed-measure superposition, supporting compactness, attainment, and constructive finite approximation.</p>
+            <div class="research-links"><a href="bkl.html">Brownian Kernel Ladders <span aria-hidden="true">↗</span></a><a href="vbkl.html">Variation BKL <span aria-hidden="true">↗</span></a></div>
+          </div></li>
+          <li class="research-item"><div>
+            <h3>Adaptive representations &amp; covariance geometry</h3>
+            <p>What is the statistical cost of choosing a representation? I study activation-mass characterizations for Brownian heads, same-sample selection through threshold traces, and common-covariance envelopes connecting Gaussian complexity, simultaneous approximation, and semidefinite certification.</p>
+            <div class="research-links"><a href="cove-bkl.html">Common covariance geometry <span aria-hidden="true">↗</span></a><a href="https://arxiv.org/abs/2609.21422">Brownian heads <span aria-hidden="true">↗</span></a></div>
+          </div></li>
+          <li class="research-item"><div>
+            <h3>Representation &amp; optimization</h3>
+            <p>I investigate how different finite realizations of the same function space affect optimizer trajectories. Current work examines Brownian-metric preconditioning, basis dependence, observable quotient geometry, and relaxed multilayer dynamics, combining mathematical analysis with controlled computational studies.</p>
+            <div class="research-links"><a href="https://arxiv.org/abs/2609.21693">Optimization geometry <span aria-hidden="true">↗</span></a></div>
+          </div></li>
+          <li class="research-item"><div>
+            <h3>Operator methods for multitask learning</h3>
+            <p>I study shared representations and task relationships through functions and operators. This includes Koopman- and composition-operator generalization bounds for deep multi-output models, vector-valued RKHSs, and trace-norm geometry.</p>
+            <div class="research-links"><a href="https://arxiv.org/abs/2608.15982">Operator-theoretic generalization <span aria-hidden="true">↗</span></a><a href="https://doi.org/10.6084/m9.figshare.33386044">Multitask trace-norm preprint <span aria-hidden="true">↗</span></a></div>
+          </div></li>
         </ol>
-      </section>
-
-      <section aria-labelledby="principle-heading">
-        <h2 id="principle-heading">Guiding principle</h2>
-
-        <p>
-          Across these projects, I seek descriptions tied to represented
-          functions and their geometry rather than to one arbitrary
-          parameterization. I distinguish carefully between structural,
-          statistical, and computational conclusions and state each result
-          within the regime for which it is justified.
-        </p>
-      </section>
-
-      <section aria-labelledby="methods-heading">
-        <h2 id="methods-heading">Methods and capabilities</h2>
-
         <div class="methods">
-          <div class="method-block">
-            <strong>Theory</strong>
-            <p>
-              Functional analysis and operator theory; RKHSs and variation
-              spaces; statistical learning theory, capacity, and generalization;
-              convex analysis and optimization; approximation theory;
-              variational methods; matrix and operator geometry.
-            </p>
+          <div><h3>Mathematical tools</h3><p>Functional analysis · Operator theory · Empirical processes · Approximation theory · Convex and variational analysis · Matrix and operator geometry</p></div>
+          <div><h3>Computational work</h3><p>Python · PyTorch · NumPy · SciPy · scikit-learn · CVXPY · Finite element and spectral methods · Numerical certification · Reproducible experiments</p></div>
+        </div>
+      </div>
+    </section>
+    <section class="content-section" id="publications" aria-labelledby="publications-heading">
+      <p class="section-label"><span>02</span>Publications</p>
+      <div class="section-content">
+        <div class="section-heading"><h2 id="publications-heading">Papers &amp; manuscripts</h2><a class="text-link" href="https://scholar.google.com/citations?user=aPX-uGIAAAAJ&amp;hl=en">Google Scholar <span aria-hidden="true">↗</span></a></div>
+        <p class="publication-intro">Recent work in machine learning theory, followed by conference proceedings and earlier journal articles in functional analysis and applied mathematics.</p>
+<div class="pub-group"><h3>Preprints &amp; submitted manuscripts</h3>
+<ol class="publications">
+<li class="publication"><p class="pub-title"><a href="https://arxiv.org/abs/2608.13882">Variation Brownian Kernel Ladders</a></p><p class="pub-authors">M. Mohammadigohari</p><div class="pub-meta"><span class="pub-status">Submitted manuscript · 2026</span><span class="pub-links"><a href="https://arxiv.org/abs/2608.13882">arXiv <span aria-hidden="true">↗</span></a><a href="vbkl.html">Project overview <span aria-hidden="true">↗</span></a></span></div></li>
+<li class="publication"><p class="pub-title"><a href="https://arxiv.org/abs/2606.15812">Brownian Kernel Ladders</a></p><p class="pub-authors">M. Mohammadigohari, G. Di Fatta, G. Nicosia, and P. M. Pardalos</p><div class="pub-meta"><span class="pub-status">Submitted manuscript · 2026</span><span class="pub-links"><a href="https://arxiv.org/abs/2606.15812">arXiv <span aria-hidden="true">↗</span></a><a href="bkl.html">Project overview <span aria-hidden="true">↗</span></a></span></div></li>
+<li class="publication"><p class="pub-title"><a href="https://arxiv.org/abs/2608.15982">Operator-Theoretic Generalization Bounds for Multitask Deep Learning</a></p><p class="pub-authors">M. Mohammadigohari, T. Borsani, and G. Di Fatta</p><div class="pub-meta"><span class="pub-status">arXiv preprint · 2026</span><span class="pub-links"><a href="https://arxiv.org/abs/2608.15982">arXiv <span aria-hidden="true">↗</span></a></span></div></li>
+<li class="publication"><p class="pub-title"><a href="https://doi.org/10.6084/m9.figshare.33386035">Common Covariance Geometry and Certification for Brownian Kernel Ladders</a></p><p class="pub-authors">M. Mohammadigohari</p><div class="pub-meta"><span class="pub-status">Figshare preprint · 2026</span><span class="pub-links"><a href="https://doi.org/10.6084/m9.figshare.33386035">Preprint <span aria-hidden="true">↗</span></a><a href="cove-bkl.html">Project overview <span aria-hidden="true">↗</span></a></span></div></li>
+<li class="publication"><p class="pub-title">Trace-Norm Geometry of Composed Multitask Predictors</p><p class="pub-authors">M. Mohammadigohari</p><div class="pub-meta"><span class="pub-status">Submitted manuscript · 2026</span></div></li>
+<li class="publication"><p class="pub-title"><a href="https://arxiv.org/abs/2609.21422">Brownian Heads for Deep ReLU Representations: Activation Mass and the Cost of Same-Sample Selection</a></p><p class="pub-authors">M. Mohammadigohari and N. Mücke</p><div class="pub-meta"><span class="pub-status">Submitted manuscript · 2026</span><span class="pub-links"><a href="https://arxiv.org/abs/2609.21422">arXiv <span aria-hidden="true">↗</span></a></span></div></li>
+<li class="publication"><p class="pub-title"><a href="https://arxiv.org/abs/2609.21693">Optimization Geometry of Equivalent Brownian RKHS Representations</a></p><p class="pub-authors">M. Mohammadigohari and G. Camps-Valls</p><div class="pub-meta"><span class="pub-status">Submitted manuscript · 2026</span><span class="pub-links"><a href="https://arxiv.org/abs/2609.21693">arXiv <span aria-hidden="true">↗</span></a></span></div></li>
+</ol>
+</div>
+<div class="pub-group"><h3>Manuscripts in preparation</h3>
+<ol class="publications">
+<li class="publication"><p class="pub-title">Spectral Bounds for Brownian Kernel Ladders: Covering, Localization, and Fixed-Design Minimax Risk</p><p class="pub-authors">M. Mohammadigohari and N. Mücke</p><div class="pub-meta"><span class="pub-status">Manuscript in preparation · 2026</span></div></li>
+<li class="publication"><p class="pub-title">Threshold Geometry and Margin Certificates for Brownian Kernel Ladders</p><p class="pub-authors">M. Mohammadigohari and N. Mücke</p><div class="pub-meta"><span class="pub-status">Manuscript in preparation · 2026</span></div></li>
+<li class="publication"><p class="pub-title">Joint Multilayer Limits, Observable Quotient Geometry, and Relaxed Dynamics for Brownian Kernel Ladders</p><p class="pub-authors">M. Mohammadigohari</p><div class="pub-meta"><span class="pub-status">Manuscript in preparation · 2026</span></div></li>
+</ol>
+</div>
+<div class="pub-group"><h3>Peer-reviewed conference proceedings</h3>
+<ol class="publications">
+<li class="publication"><p class="pub-title"><a href="https://doi.org/10.1007/978-3-032-21480-5_25">On the Koopman-Based Generalization Bounds for Multi-Task Deep Learning</a></p><p class="pub-authors">M. Mohammadigohari, G. Di Fatta, G. Nicosia, and P. M. Pardalos</p><div class="pub-meta"><span class="pub-status">LOD 2025 · LNCS 16468, pp. 376–392 · Springer, 2026</span><span class="pub-links"><a href="https://doi.org/10.1007/978-3-032-21480-5_25">DOI <span aria-hidden="true">↗</span></a><a href="https://arxiv.org/abs/2512.19199">arXiv <span aria-hidden="true">↗</span></a></span></div></li>
+<li class="publication"><p class="pub-title"><a href="https://doi.org/10.1007/978-3-032-21480-5_9">Operator-Based Generalization Bound for Deep Learning: Insights on Multi-Task Learning</a></p><p class="pub-authors">M. Mohammadigohari, G. Di Fatta, G. Nicosia, and P. M. Pardalos</p><div class="pub-meta"><span class="pub-status">LOD 2025 · LNCS 16468, pp. 120–137 · Springer, 2026</span><span class="pub-links"><a href="https://doi.org/10.1007/978-3-032-21480-5_9">DOI <span aria-hidden="true">↗</span></a><a href="https://arxiv.org/abs/2512.19184">arXiv <span aria-hidden="true">↗</span></a></span></div></li>
+</ol>
+</div>
+<details class="earlier-publications"><summary>Earlier journal articles <span>2012–2020 · 4 papers</span></summary><ol class="publications">
+<li class="publication"><p class="pub-title"><a href="https://doi.org/10.1007/s13226-020-0467-8">The Operator-Valued Parallelism and Norm-Parallelism in Matrices</a></p><p class="pub-authors">M. Mohammadi Gohari and M. Amyari</p><div class="pub-meta"><span class="pub-status">Indian Journal of Pure and Applied Mathematics, 51(4):1305–1316 · 2020</span><span class="pub-links"><a href="https://doi.org/10.1007/s13226-020-0467-8">DOI <span aria-hidden="true">↗</span></a></span></div></li>
+<li class="publication"><p class="pub-title"><a href="https://doi.org/10.32513/tbilisi/1561082568">Parallelism in Hilbert K(H)-Modules</a></p><p class="pub-authors">M. Mohammadi Gohari and M. Amyari</p><div class="pub-meta"><span class="pub-status">Tbilisi Mathematical Journal, 12(2):67–75 · 2019</span><span class="pub-links"><a href="https://doi.org/10.32513/tbilisi/1561082568">DOI <span aria-hidden="true">↗</span></a><a href="https://arxiv.org/abs/1812.00164">arXiv <span aria-hidden="true">↗</span></a></span></div></li>
+<li class="publication"><p class="pub-title"><a href="https://doi.org/10.1515/ms-2017-0192">Refinements of the Heinz Inequalities for Operators and Matrices</a></p><p class="pub-authors">M. Mohammadi Gohari and M. Amyari</p><div class="pub-meta"><span class="pub-status">Mathematica Slovaca, 68(6):1431–1438 · 2018</span><span class="pub-links"><a href="https://doi.org/10.1515/ms-2017-0192">DOI <span aria-hidden="true">↗</span></a></span></div></li>
+<li class="publication"><p class="pub-title"><a href="https://doi.org/10.56093/ijans.v82i9.23658">Using Mathematical Models for the Lactation Curve of Milk and Fat Production in Iranian Holstein Cows</a></p><p class="pub-authors">M. H. Jahandar, M. Elahi Torshizi, H. Farhangfar, and M. Mohammadi Gohari</p><div class="pub-meta"><span class="pub-status">Indian Journal of Animal Sciences, 82(9):1016–1021 · 2012</span><span class="pub-links"><a href="https://doi.org/10.56093/ijans.v82i9.23658">DOI <span aria-hidden="true">↗</span></a></span></div></li>
+</ol></details>
+      </div>
+    </section>
+    <section class="content-section" id="background" aria-labelledby="background-heading">
+      <p class="section-label"><span>03</span>Background</p>
+      <div class="section-content">
+        <h2 id="background-heading">From functional analysis to learning theory.</h2>
+        <p class="background-intro">I hold doctorates in Computer Science and Mathematics. My work brings a background in functional analysis and operator theory to questions about deep learning, adaptive representations, and generalization.</p>
+        <div class="background-columns">
+          <div>
+            <h3>Doctoral education</h3>
+            <ul class="timeline">
+              <li><span class="date">2022–2026</span><span class="role">Ph.D. in Computer Science<br>Machine Learning Theory</span><span class="place">Free University of Bozen–Bolzano, Italy</span><span class="detail">Advisor: Prof. Giuseppe Di Fatta<br>Defended September 2026</span></li>
+              <li><span class="date">2014–2018</span><span class="role">Ph.D. in Mathematics<br>Functional Analysis</span><span class="place">Islamic Azad University, Mashhad, Iran</span><span class="detail">Advisor: Prof. Maryam Amyari</span></li>
+            </ul>
           </div>
-
-          <div class="method-block">
-            <strong>Computation</strong>
-            <p>
-              Python, PyTorch, NumPy, SciPy, scikit-learn, and CVXPY; finite
-              element and spectral implementations; convex optimization;
-              numerical certification; reproducible, protocol-locked, and
-              theorem-aligned experiments.
-            </p>
+          <div>
+            <h3>Research &amp; teaching</h3>
+            <ul class="timeline">
+              <li><span class="date">July 2026–present</span><span class="role">Independent Researcher</span><span class="place">Bolzano, Italy</span></li>
+              <li><span class="date">November 2022–June 2026</span><span class="role">Doctoral Researcher</span><span class="place">Faculty of Engineering<br>Free University of Bozen–Bolzano, Italy</span></li>
+              <li><span class="date">2006–2020</span><span class="role">Faculty Member / Instructor</span><span class="place">Islamic Azad University, Iran</span></li>
+            </ul>
           </div>
         </div>
-      </section>
-
-      <section aria-labelledby="work-heading">
-        <h2 id="work-heading">Selected public work</h2>
-
-        <ul class="public-work">
-          <li>
-            <a href="bkl.html">Brownian Kernel Ladders</a>
-            — project page and research overview
-          </li>
-          <li>
-            <a
-              href="https://arxiv.org/abs/2606.15812"
-              target="_blank"
-              rel="noopener noreferrer"
-            >Brownian Kernel Ladders</a>
-            — arXiv
-          </li>
-          <li>
-            <a href="vbkl.html">Variation Brownian Kernel Ladders</a>
-            — project page and research overview
-          </li>
-          <li>
-            <a
-              href="https://arxiv.org/abs/2608.13882"
-              target="_blank"
-              rel="noopener noreferrer"
-            >Variation Brownian Kernel Ladders</a>
-            — arXiv
-          </li>
-          <li>
-            <a href="cove-bkl.html">Common Covariance Geometry and Certification for Brownian Kernel Ladders</a>
-            — project page and research overview
-          </li>
-          <li>
-            <a
-              href="https://doi.org/10.6084/m9.figshare.33386035"
-              target="_blank"
-              rel="noopener noreferrer"
-            >Common Covariance Geometry and Certification for Brownian Kernel Ladders</a>
-            — Figshare preprint and DOI
-          </li>
-          <li>
-            <a
-              href="https://doi.org/10.6084/m9.figshare.33386044"
-              target="_blank"
-              rel="noopener noreferrer"
-            >Sample-Weighted End-to-End Trace-Norm Geometry for Multitask Learning</a>
-            — Figshare preprint and DOI
-          </li>
-          <li>
-            <a
-              href="https://scholar.google.com/citations?user=aPX-uGIAAAAJ&amp;hl=en"
-              target="_blank"
-              rel="noopener noreferrer"
-            >Google Scholar profile</a>
-            — complete publication record
-          </li>
-        </ul>
-      </section>
-    </main>
-
-    <footer>
-      Mahdi Mohammadigohari · Bolzano, Italy
-    </footer>
-  </div>
+        <p class="background-note">Full education, research grants, teaching experience, and technical expertise are available in my <a href="Mahdi_Mohammadigohari_CV.pdf">curriculum vitae (PDF)</a>.</p>
+      </div>
+    </section>
+    <section class="content-section contact-section" id="contact" aria-labelledby="contact-heading">
+      <p class="section-label"><span>04</span>Contact</p>
+      <div class="section-content contact-panel">
+        <h2 id="contact-heading">Get in touch.</h2>
+        <p>For research discussions and collaboration:</p>
+        <a class="contact-email" href="mailto:mahdi.mohammadigohari@gmail.com">mahdi.mohammadigohari@gmail.com</a>
+        <p class="contact-meta">Based in Bolzano, Italy</p>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer"><p>© 2026 Mahdi Mohammadigohari</p><p>Updated September 2026 · <a href="#top">Back to top ↑</a></p></footer>
+</div>
 </body>
 </html>
