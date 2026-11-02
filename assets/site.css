@@ -45,7 +45,7 @@ h1, h2, h3 { color: var(--ink); }
 .arrow { font-size: 15px; font-weight: 400; }
 .portrait { margin: 0; align-self: center; padding-top: 15px; }
 .portrait-frame { padding: 9px; background: var(--white); border: 1px solid var(--line); }
-.portrait img { width: 264px; height: 282px; object-fit: cover; object-position: 50% 50%; }
+.portrait img { width: 264px; height: 264px; object-fit: contain; object-position: 50% 50%; }
 .portrait figcaption { margin-top: 14px; color: var(--muted); font-size: 11px; line-height: 1.8; }
 .portrait figcaption span { display: block; }
 .profile-links { display: flex; flex-wrap: wrap; align-items: center; column-gap: 29px; row-gap: 9px; padding-block: 20px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); font-size: 11px; }
